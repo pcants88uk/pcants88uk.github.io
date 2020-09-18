@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tools">
+        <div class="pencil active">
+            <img class="blackpencil tool " src="./NewIcons/Black_Pencil.svg" alt=""
+                onclick="handleToolChange('pencil')">
+            <!-- options -->
+            <div class="pencil-options">
+                <div class="pencil-slider">
+                    <input class="slider" type="range" min="5" max="60" value="5" oninput="changeSize(this.value)">
+                </div>
+
+                <div class="pencil-colors">
+                    <div class="blue" onclick="handleColorChange('blue')"> </div>
+                    <div class="red" onclick="handleColorChange('red')"> </div>
+                    <div class="black" onclick="handleColorChange('black')"> </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="eraser">
+            <img class="whitepencil tool" src="./NewIcons/Eraser.svg" alt="" onclick="handleToolChange('eraser')">
+            <div class="eraser-options">
+                <div class="eraser-slider">
+                    <input class="slider" type="range" min="5" max="60" value="5" oninput="changeSize(this.value)">
+                </div>
+            </div>
+        </div>
+
+        <div class="sticky">
+            <img src="./NewIcons/StickyNote.svg" class="tool" alt="" onclick="handleToolChange('sticky')">
+        </div>
+
+        <div class="uploadImage">
+            <img src="./NewIcons/Photo.svg" class="tool" alt="" onclick="handleToolChange('uploadImage')">
+
+            <!-- options -->
+            <div class="uploadImage-options">
+                <div class="uploadImage-path">
+                    <input type="file" name="" id="fileInput" accept="image/">
+                </div>
+            </div>
+        </div>
+
+        <div class="download">
+            <img src="./NewIcons/Download.svg" class="tool" alt="" onclick="handleToolChange('downloadImage')">
+        </div>
+
+        <div class="undo">
+            <img src="./NewIcons/Undo.svg" class="tool" alt="">
+        </div>
+
+        <div class="redo">
+            <img src="./NewIcons/Redo.svg" class="tool" alt="">
+        </div>
+
+    </div>
+
+    <canvas class="board"></canvas>
+
+    <script>
+        var board = document.querySelector(".board");
+        board.height = window.innerHeight;
+        board.width = window.innerWidth;
+        var ctx = board.getContext("2d");
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="js/imageScript.js"></script>
+    <script src="js/stickyScript.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

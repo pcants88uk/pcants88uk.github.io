@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    margin: 0rem;
+}
+
+.tools {
+    /* margin-left:2rem; */
+    padding: 0.5rem;
+    background: orange;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tool{
+    width: 2rem;
+}
+
+.active {
+    background-color: gray;
+    border-radius: 50%;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.pencil,
+.eraser,
+.uploadImage,
+.download,
+.sticky,
+.uploadImage,
+.undo,
+.redo {
+  transition: all .2s;
+  position: relative;
+
+  /* box-shadow: 10px 10px 20px rgba(#000000, 1.2); */
+}
+
+.pencil:hover,
+.eraser:hover,
+.sticky:hover,
+.download:hover,
+.uploadImage:hover,
+.undo:hover,
+.redo:hover {
+  transform: translateY(-0.3rem);
+  cursor: pointer;
+  /* box-shadow: 10px 10px 20px rgba(#000000, 1.2); */
+}
+
+.pencil:active,
+.eraser:active,
+.sticky:active,   
+.download:active,   
+.uploadImage:active,
+.undo:active,   
+.redo:active   
+{
+    transform: translateY(-0.1rem); 
+    /* box-shadow: 10px 5px 10px rgba(#000000, 0.9); */
+}
+
+.pencil-options,
+.eraser-options,
+.uploadImage-options {
+  height: 4rem;
+  width: 9rem;
+  /* background-color: yellow; */
+  position: absolute;
+  top: 115%;
+  left: -40px;
+  /* border-collapse: separate;  */
+  border: 1px solid orange;
+  border-radius: 4px;
+  transition: transform;
+  /* overflow: hidden; */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .2s, opacity .2s;
+  /* border-radius:50%; */
+} 
+
+.pencil:hover .pencil-options .eraser-options {
+  transform: translateY(0.3rem); 
+}
+
+.pencil:active .pencil-options .eraser-options {
+  transform: translateY(0.1rem); 
+}
+
+.pencil-slider {
+  height: 60%;
+  width: 100%;
+  /* background: green; */
+  background: orange;
+
+}
+
+.eraser-options {
+  background: orange;
+
+  height: 3rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+  margin-top: .9rem;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4CAF50;
+  cursor: pointer;
+
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.pencil-colors {
+  height: 50%;
+  /* background-color: rgb(83, 18, 18); */
+  background: orange;
+
+  display: flex;
+  justify-content: space-evenly; 
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.blue,
+.red,
+.black,
+.close,
+.minimize {
+  /* margin-top: .75rem;
+  border-radius: 50%;
+  width: 15%;
+  height: 35%; */
+  margin-top: .45rem;
+  border-radius: 50%;
+  width: 18%;
+  height: 46%;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
+
+.sticky-pad {
+  position: absolute;     
+  left: 40%;
+  top: 40%;
+}
+
+.nav {
+  height: 2rem;
+  /* width:auto; */
+  background-color: darkgray;
+  display: flex;
+  justify-content: flex-end;
+  width: 15.6rem;
+}
+
+.writing-pad {
+  width: 15.6rem;
+  background-color: coral;
+  margin: 0px;
+  padding: 1rem;
+  height: 12.5rem;
+  outline: none;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.close {
+  margin-left:0.5rem;
+  background-color: red;
+
+}
+.minimize {
+  /* margin-left:1rem; */
+  background-color: green;
+}
